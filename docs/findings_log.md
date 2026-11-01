@@ -81,3 +81,93 @@ April's severe-delay rate was only 2.35%, compared with 24.31% in March.
 Results are observational, not causal. The dataset does not provide complete carrier tracking, service-level contracts or operational incident records.
 
 All findings are from a historical public dataset, not a live company deployment.
+
+## Finding 7 — Seller Location and Rio de Janeiro Delivery Performance
+
+### Research Question
+Were Rio de Janeiro's February–March 2018 delays concentrated among orders from sellers in particular states?
+
+### Scope
+Eligible single-seller orders delivered to Rio de Janeiro customers, grouped by seller state and purchase month.
+
+### SP Seller to RJ Customer Performance
+
+| Metric | February 2018 | March 2018 | April 2018 |
+|---|---:|---:|---:|
+| Orders | 563 | 582 | 550 |
+| Late deliveries | 222 | 247 | 32 |
+| Late rate | 39.43% | 42.44% | 5.82% |
+| Severe delays | 137 | 178 | 17 |
+| Severe delay rate | 24.33% | 30.58% | 3.09% |
+| Median transit days | 17.11 | 22.12 | 9.17 |
+
+### Key Findings
+1. SP sellers accounted for 247 of the 298 late orders recorded among all eligible RJ customer orders purchased in March 2018 (82.9%).
+2. Median SP-to-RJ transit duration was 22.12 days in March, falling to 9.17 days in April.
+3. In March, SP sellers had a 42.44% late rate, compared with 5.88% for RJ sellers serving RJ customers.
+4. Severe-delay rates for SP-to-RJ orders decreased from 30.58% in March to 3.09% in April.
+
+### Business Interpretation
+Orders associated with SP sellers contributed disproportionately to RJ's late-delivery volume during March 2018. This seller-state group should be prioritised for investigation of dispatch timelines, transportation performance and delivery commitments.
+
+### Limitations
+Seller registered location may differ from physical dispatch location. Analysis is observational and limited to eligible single-seller orders. No specific carrier-level cause has been established.
+
+### Next Steps
+Investigate promised delivery windows, pre-handoff durations and transit-time distributions for SP-to-RJ orders.
+
+### Reproducibility
+Script: analysis/rj_seller_routes.py within the Python starter project.
+Source: Olist Brazilian E-Commerce Dataset.
+
+## Finding 8 — SP to RJ Delivery Diagnostics
+
+### Business Question
+What factors were associated with the sharp improvement in delivery performance between March and April 2018?
+
+### Dataset Scope
+Eligible single-seller orders purchased February to April 2018, with sellers registered in Sao Paulo (SP) and customers in Rio de Janeiro (RJ).
+
+### Results
+
+| Metric | March 2018 | April 2018 |
+|---|---:|---:|
+| Orders | 582 | 550 |
+| Late orders | 247 | 32 |
+| Late rate | 42.44% | 5.82% |
+| Severe delay rate | 30.58% | 3.09% |
+| Median actual delivery days | 25.39 | 12.39 |
+| Median transit days | 22.12 | 9.17 |
+| Median pre-handoff days | 2.09 | 1.44 |
+| Median promised days | 30.07 | 32.08 |
+| 90th percentile transit days | 41.88 | 22.68 |
+
+### Key Findings
+
+1. Median actual delivery duration decreased by 13 days.
+2. Median transportation duration decreased by 12.95 days.
+3. Median promised delivery duration increased by 2.01 days.
+4. Late-delivery rate decreased by 36.62 percentage points.
+5. Severe-delay rate decreased by 27.49 percentage points.
+6. The 90th percentile of transit duration fell by 19.20 days.
+
+### Business Interpretation
+
+The improvement in April was associated with substantially shorter transportation and actual delivery durations. Modestly longer delivery commitments may also have contributed to better on-time performance.
+
+### Recommendation for Further Investigation
+
+Prioritise examining the transportation-stage performance of SP-to-RJ orders, especially unusually long transit durations. Review delivery estimates alongside actual performance to distinguish operational improvement from more generous commitments.
+
+### Limitations
+
+Observational analysis cannot establish causation. Seller registration state may differ from the actual dispatch location. Carrier event-level records are unavailable.
+
+### Reproducibility
+
+Python script:
+Project_Starter_14_Days/Delivery_Investigation_Starter/analysis/sp_rj_diagnostics.py
+
+Output:
+outputs/real/sp_rj_diagnostics.csv (generated locally).
+
