@@ -1,0 +1,15 @@
+WHY ARE CUSTOMERS RECEIVING ORDERS LATE? - 14-DAY ANALYTICS PROJECT
+
+Included files:
+- Project_Report_14_Days.pdf (8-page roadmap/report)
+- Project_Report_14_Days.docx (editable report)
+- Project_Starter_14_Days.zip (VS Code project files)
+
+First steps:
+1. Extract this package on your computer.
+2. Extract Project_Starter_14_Days.zip.
+3. Open the Delivery_Investigation_Starter folder in VS Code.
+4. Read README.md and docs/days_01_02_workshop.md.
+5. Download the Olist Brazilian E-Commerce public dataset from Kaggle.
+
+If your browser cannot preview a ZIP or DOCX, choose Download rather than Open.

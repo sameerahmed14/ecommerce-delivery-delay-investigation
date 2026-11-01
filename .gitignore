@@ -1,0 +1,23 @@
+
+# Python environments
+.venv/
+.venv-1/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw and generated data
+data/raw/
+outputs/
+*.sqlite
+*.sqlite3
+*.db
+
+# Credentials and local files
+.env
+.env.*
+!.env.example
+*.zip
+.vscode/
+

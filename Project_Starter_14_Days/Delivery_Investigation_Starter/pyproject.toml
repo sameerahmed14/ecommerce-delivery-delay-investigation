@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "delivery-investigation"
+version = "0.1.0"
+description = "An evidence-led Olist e-commerce delivery investigation"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0,<4", "numpy>=1.24,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
