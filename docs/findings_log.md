@@ -227,3 +227,45 @@ Evaluate missing-review patterns, verify review aggregation, and conduct statist
 Python script:
 Project_Starter_14_Days/Delivery_Investigation_Starter/analysis/customer_satisfaction.py
 
+
+## Finding 10 — Statistical Validation of Customer Satisfaction
+
+### Research Question
+Is delivery-delay severity statistically associated with low customer review ratings?
+
+### Method
+Chi-square test of independence between delivery severity
+(on time, 1-7 days late, over 7 days late)
+and low customer rating (1-2 stars versus higher ratings).
+
+### Results
+- Reviewed eligible orders: 95,824
+- Chi-square statistic: 16,343.91
+- Degrees of freedom: 2
+- P-value: less than 0.001
+- Cramer's V: approximately 0.413
+
+### Customer Review Comparison
+
+| Delivery category | Orders | Average rating | Low-rating rate |
+|---|---:|---:|---:|
+| On time | 89,443 | 4.29 | 9.23% |
+| 1-7 days late | 3,600 | 2.72 | 49.36% |
+| Over 7 days late | 2,781 | 1.70 | 79.18% |
+
+### Data Quality
+- On-time review coverage: 99.45%
+- Late-order review coverage: 97.66%
+- Missing reviews may introduce selection bias.
+
+### Interpretation
+The results provide strong statistical evidence of an
+association between delivery severity and low customer ratings.
+
+The association does not establish causation. Other factors,
+including product quality and seller service, may influence ratings.
+
+### Reproducibility
+Script: analysis/statistical_validation.py
+Data: Olist Brazilian E-Commerce Dataset.
+
