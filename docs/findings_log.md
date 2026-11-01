@@ -171,3 +171,59 @@ Project_Starter_14_Days/Delivery_Investigation_Starter/analysis/sp_rj_diagnostic
 Output:
 outputs/real/sp_rj_diagnostics.csv (generated locally).
 
+
+## Finding 9 — Delivery Delays and Customer Satisfaction
+
+### Research Question
+Are late deliveries associated with lower customer review scores?
+
+### Scope
+96,470 eligible delivered orders; 95,824 orders have valid review scores.
+
+### Overall Results
+
+| Delivery category | Reviewed orders | Average score | Low-rating rate |
+|---|---:|---:|---:|
+| On time | 89,443 | 4.29 | 9.23% |
+| 1-7 days late | 3,600 | 2.72 | 49.36% |
+| Over 7 days late | 2,781 | 1.70 | 79.18% |
+
+Low ratings are defined as review scores of 1-2.
+
+### SP to RJ Customer Experience
+
+| Metric | March 2018 | April 2018 |
+|---|---:|---:|
+| Reviewed orders | 572 | 544 |
+| Average review score | 2.97 | 4.08 |
+| Low-rating rate | 42.83% | 15.99% |
+| Late rate among reviewed orders | 41.61% | 5.70% |
+
+### Key Findings
+
+1. Average scores decreased as delivery delays became more severe.
+2. Severely delayed reviewed orders had approximately 8.6 times the low-rating rate of reviewed on-time orders.
+3. SP-to-RJ customer reviews improved in April, alongside a substantial improvement in delivery performance.
+4. Review coverage was approximately 99.33% overall.
+
+### Business Interpretation
+
+The evidence supports prioritising delivery performance as a customer experience issue. Reducing severe delays could be relevant to improving satisfaction, but a causal effect has not been established.
+
+### Limitations
+
+- Correlation does not establish causation.
+- Product quality, seller service and other factors may affect ratings.
+- Missing reviews may introduce selection bias.
+- Review scores are aggregated at order level using review_score_mean.
+- Historical public data, not live operational performance.
+
+### Next Steps
+
+Evaluate missing-review patterns, verify review aggregation, and conduct statistical validation of the relationship.
+
+### Reproducibility
+
+Python script:
+Project_Starter_14_Days/Delivery_Investigation_Starter/analysis/customer_satisfaction.py
+
